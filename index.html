@@ -5,61 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
 
 
 <body>
-    <script>
+    <div id="buttons">
+        <button id="rockBtn">Rock</button>
+        <button id="paperBtn">Paper</button>
+        <button id="scissorsBtn">Scissors</button>
+    </div>
 
-        function game(num) {
+    <h1 class="scoreHeader">SCOREBOARD</h1>
+    <p class="playerScore">Player</p>
+    <p class="numP"></p>
+    <p class="compScore">Computer</p>
+    <p class="comP"></p>
 
-            for (let num=0; num<5;num++) {
-                // write function computerPlay that will randomly return Rock, Paper or Scissors
-                let move = Math.floor(Math.random() * 3);
-                
-                function computerPlay() {
-                    if (move === 1) {
-                    return 'rock';
-                    } else if (move === 2) {
-                    return 'paper';
-                    } else {
-                    return 'scissors';
-                    }
-                }
+    <div class="displayResult">
+        <p></p>
+    </div>
 
-                // write function that that plays the game with parameters playerSelection and computerSelection
-                // get player input
-        
-                let playerSelection = window.prompt('let\'s play rock paper and scissors!');
-                const computerSelection = computerPlay();
-      
-        
-                // compare playerSelection vs computerSelection
-
-                function outcome(playerSelection, computerSelection) {
-                    if (playerSelection==='paper' && computerSelection==='rock') {
-                        return 'You win!!! Paper beats Rock!';
-                    } else if (playerSelection==='scissors' && computerSelection==='paper') {
-                        return 'You win!!! Scissors beats Paper!';
-                    } else if (playerSelection==='rock' && computerSelection==='scissors') {
-                        return 'You win!!! Rock beats Scissors!';
-                    } else if (playerSelection===computerSelection) {
-                        return 'It\'s a tie! Roll again!';
-                    } else {
-                        return 'You lose!!! ' + computerSelection[0].toUpperCase() + computerSelection.substring(1) + ' beats ' + playerSelection[0].toUpperCase() + playerSelection.substring(1) + '!';
-                    }
-
-                }
-
-                console.log(outcome(playerSelection,computerSelection))
-            }
-        }
-
-        console.log(game())
-
-        
-
-    </script>
+    <div class="results">
+        <div class='playerWinsTotal'>Player wins:</div>
+        <div class='compWinsTotal'>Comp wins:</div>
+        <div class='ties'>Ties:</div>
+    </div>
+    
+    <div id='playerMoves'>
+        <h1 class="player"></h1>
+        <h1 class="comp"></h1>
+    </div>
+    
 </body>
 </html>
